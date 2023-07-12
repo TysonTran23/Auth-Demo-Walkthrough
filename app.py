@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, session, flash
 from flask_debugtoolbar import DebugToolbarExtension
 from models import connect_db, db, User
 # from forms import UserForm, TweetForm
-from sqlalchemy.exc import IntegrityError
+# from sqlalchemy.exc import IntegrityError
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql:///auth_demo"

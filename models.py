@@ -1,4 +1,5 @@
 from flask_bcrypt import Bcrypt
+# import bcrypt
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
