@@ -1,6 +1,8 @@
-from flask import Flask, render_template, redirect, session, flash
+from flask import Flask, flash, redirect, render_template, session
 from flask_debugtoolbar import DebugToolbarExtension
-from models import connect_db, db, User
+
+from models import User, connect_db, db
+
 # from forms import UserForm, TweetForm
 # from sqlalchemy.exc import IntegrityError
 
@@ -9,7 +11,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql:///auth_demo"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["SQLALCHEMY_ECHO"] = True
 app.config["SECRET_KEY"] = "abc123"
-app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
+app.config["DEBUG_TB_INTERCEPT_REDIRECTS"] = False
 
 
 connect_db(app)
@@ -18,6 +20,6 @@ connect_db(app)
 toolbar = DebugToolbarExtension(app)
 
 
-@app.route('/')
+@app.route("/")
 def home_page():
-    return render_template('index.html')
+    return render_template("index.html")
