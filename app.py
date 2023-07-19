@@ -1,5 +1,6 @@
 from flask import Flask, flash, redirect, render_template, session
 from flask_debugtoolbar import DebugToolbarExtension
+# from flask_bcrypt import Bcrypt
 
 from models import User, connect_db, db
 
@@ -7,6 +8,8 @@ from models import User, connect_db, db
 # from sqlalchemy.exc import IntegrityError
 
 app = Flask(__name__)
+# bcrypt = Bcrypt(app)
+
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql:///auth_demo"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["SQLALCHEMY_ECHO"] = True
